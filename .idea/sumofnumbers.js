@@ -27,3 +27,18 @@ function sumWhile(nums) {
 
 console.log(sumWhile(testNums));
 
+function sumRecursion(nums) {
+  if (nums.length === 0) {
+    return 0;
+  }
+  return nums[0] + sumRecursion(nums.slice(1, nums.length));
+}
+
+console.log(sumRecursion(testNums));
+
+function sumTheSimpleWay(nums) {
+  return _.reduce(nums, function memoizer(memo, num) { return memo + num; }, 0);
+}
+
+console.log(sumTheSimpleWay(testNums));
+
